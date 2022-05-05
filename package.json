@@ -1,0 +1,22 @@
+{
+  "name": "instagramscraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "deploy": "npx serverless deploy --verbose",
+    "test-scraping": "npx serverless invoke -f scraping --log",
+    "test-get": "npx serverless invoke -f getAll --log"
+  },
+  "keywords": [],
+  "author": "Mateus Cardoso dos Santos",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-aws-lambda": "^10.1.0",
+    "dotenv": "^16.0.0",
+    "mysql2": "^2.3.3",
+    "puppeteer": "^13.6.0",
+    "puppeteer-extra": "^3.2.3",
+    "sequelize": "^6.19.0"
+  }
+}
