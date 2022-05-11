@@ -6,17 +6,22 @@
   "scripts": {
     "deploy": "npx serverless deploy --verbose",
     "test-scraping": "npx serverless invoke -f scraping --log",
-    "test-get": "npx serverless invoke -f getAll --log"
+    "test-get": "npx serverless invoke -f getAll --log",
+    "test-cropImages": "npx serverless invoke local -f cropImages"
   },
   "keywords": [],
   "author": "Mateus Cardoso dos Santos",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.1132.0",
+    "axios": "^0.27.2",
     "chrome-aws-lambda": "^10.1.0",
     "dotenv": "^16.0.0",
     "mysql2": "^2.3.3",
     "puppeteer": "^13.6.0",
     "puppeteer-extra": "^3.2.3",
-    "sequelize": "^6.19.0"
+    "request-promise-native": "^1.0.9",
+    "sequelize": "^6.19.0",
+    "sharp": "^0.30.4"
   }
 }

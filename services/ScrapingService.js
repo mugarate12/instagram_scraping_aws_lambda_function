@@ -93,6 +93,7 @@ async function getPostImage(browser, postRef, postImageSrc) {
   const ext = '.png'
 
   const buffer = await page.screenshot({ fullPage: true })
+
   const payload = {
     Bucket: process.env.BUCKET,
     Key: `${reference}${ext}`,
