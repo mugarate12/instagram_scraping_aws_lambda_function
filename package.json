@@ -4,7 +4,14 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
+    "test": "rmdir node_modules/sharp",
+    "predeploy": "run-script-os",
+    "predeploy:darwin:linux": "rm -rf node_modules/sharp && npm install --platform=linux --arch=x64 --target=8.10.0 sharp",
+    "predeploy:win32": "npm uninstall sharp&& npm install --platform=linux --arch=x64 --target=8.10.0 sharp",
     "deploy": "npx serverless deploy --verbose",
+    "postdeploy": "run-script-os",
+    "postdeploy:darwin:linux": "rm -rf node_modules/sharp && npm install sharp",
+    "postdeploy:win32": "npm uninstall sharp&& npm install sharp",
     "test-scraping": "npx serverless invoke -f scraping --log",
     "test-get": "npx serverless invoke -f getAll --log",
     "test-cropImages": "npx serverless invoke local -f cropImages"
@@ -21,6 +28,7 @@
     "puppeteer": "^13.6.0",
     "puppeteer-extra": "^3.2.3",
     "request-promise-native": "^1.0.9",
+    "run-script-os": "^1.1.6",
     "sequelize": "^6.19.0",
     "sharp": "^0.30.4"
   }

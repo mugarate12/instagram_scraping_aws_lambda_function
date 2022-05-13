@@ -66,8 +66,14 @@ module.exports.cropImages = async (event) => {
   try {
     await initDatabase();
 
-    await ManipulateImagesController.cropImages();
+    const records = event.Records;
+    await ManipulateImagesController.cropImages(records)
+      .catch(error => {
+        console.log('error', error);
+      });
 
+    console.log('feito!');
+    
     return {
       statusCode: 200,
       body: JSON.stringify(
