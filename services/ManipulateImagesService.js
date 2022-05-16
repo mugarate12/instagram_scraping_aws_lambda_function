@@ -35,7 +35,7 @@ async function cropImage(imageContent) {
   // 205
   const top = 220;
   const width = 645;
-  const height = 635;
+  const height = 620;
 
   return await sharp(imageContent)
     .extract({ left, top, width, height })
